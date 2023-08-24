@@ -8,28 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="bg"></div>
-    <!--Create Navbar-->
-    <nav class="navbar">
-        <div class="left">
-            <div class="logo">
-            <img src="/static/img/logo.png" alt="coder hub logo" width="20%">
-        </div>
-        </div>
-        <div class="right">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fa fa-bars"></i>
-            </label>
-            <ul class="list">
-                <li> <a href="/index.html"> Home</a></li>
-                <li> <a href="/temp/main_project_page.html">Projects</a></li>
-                <li> <a href="https://www.youtube.com/channel/UCln9TV1uyA6Psv-PxKymKlA" target="_blank">Vedio</a></li>
-                <li> <a href="/temp/learn_skill.html">Learn Skills</a></li>
-                <li> <a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="header" ></div><br><br>
     <!--Create card -->
 <section>
     <h2 class="card-heading">Tutorial </h2>
@@ -137,7 +116,7 @@
               </a>
               </li>
             <li>
-              <a href="https://www.linkedin.com/in/bhojraj-singh-37a7a3280/" target="_blank"">
+              <a href="https://www.linkedin.com/in/bhojraj-singh-37a7a3280/" target="_blank">
                 <i class="fa fa-linkedin"></i>
               </a>
               
@@ -153,5 +132,12 @@
         </div>
    
 </footer>
+<script>
+    fetch('/temp/module/header.html')
+        .then(response => response.text())
+        .then(content => {
+            document.getElementById('header').innerHTML = content;
+        });
+</script>
 </body>
 </html>
